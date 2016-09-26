@@ -20,15 +20,15 @@ func main() {
 			countLines(f, counts)
 		}
 	}
+	for u, v := range counts {
+		if v > 1 {
+			fmt.Printf("%d\t%s\n", v, u)
+		}
+	}
 }
 func countLines(f *os.File, c map[string]int) {
 	input := bufio.NewScanner(f)
 	for input.Scan() {
 		c[input.Text()]++
-	}
-	for u, v := range c {
-		if v > 1 {
-			fmt.Printf("%d\t%s\n", v, u)
-		}
 	}
 }
