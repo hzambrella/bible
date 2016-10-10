@@ -23,5 +23,9 @@ func main() {
 		fmt.Println()
 	}
 	// 输入-n时，n为true
-	fmt.Println(*n)
+	nn, err := fmt.Println(*n)
+	fmt.Println(nn)
+	if err != nil {
+		fmt.Println(err)
+	}
 }
