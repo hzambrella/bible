@@ -1,33 +1,16 @@
 package popcount
 
 import "testing"
+import "fmt"
 
 
-
-func BenchPopCount(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		PopCount(666)
-	}
+// homework2.4
+func TestPopCountMove(t *testing.T) {
+	result := PopCountMove(66666)
+	fmt.Println(result)
 }
-// !go test -bench='BenchPopCount'
-/*testing: warning: no tests to run
-PASS
-ok		bible/2/2.6/popcount	0.006s
-
-Press ENTER or type command to continue
-*/
-
- //  homework 2.3
-func BenchPopCountCircle(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		PopCountCircle(666)
-	}
+// homework2.5
+func TestPopCountFast(t *testing.T) {
+	result := PopCountFast(254)
+	fmt.Println(result)
 }
-// !go test -bench='BenchPopCountCircle'
-
-/*
-testing: warning: no tests to run
-PASS
-ok		bible/2/2.6/popcount	0.005s
-*/
-

@@ -8,6 +8,13 @@ import (
 )
 
 func main() {
+	researchmove()
+	move(255)
+	// table()
+}
+
+// 查表法统计二进制数的1的个数当中，研究表
+func table() {
 	//  byte array of 256 length
 	var pc [256]byte
 	fmt.Println("pc is ", pc)
@@ -19,4 +26,25 @@ func main() {
 		fmt.Printf("byte(%d&1)=%v\t", i, byte(i&1))
 		fmt.Printf("pc[%d]:=%v\n", i, pc[i])
 	}
+}
+
+// 普通法统计二进制数的1的个数
+func move(n uint64) int {
+	var c uint64
+	//	for c = 0; n > 0; n >> 1 {
+	// ./byte.go:30: n >> 1 evaluated but not used
+	for c = 0; n > 0; n >>= 1 {
+		c += n & 1
+		fmt.Printf("n=%v\n", n)
+	}
+	return int(c)
+}
+
+// n>>1和n>>=1
+func researchmove() {
+	var n int = 255
+	fmt.Println(n >> 1)
+	fmt.Println(n)
+	n >>= 1
+	fmt.Println(n)
 }
