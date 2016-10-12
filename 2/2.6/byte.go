@@ -8,6 +8,7 @@ import (
 )
 
 func main() {
+	fmt.Println(lenOfInt(255))
 	researchmove()
 	move(255)
 	// table()
@@ -47,4 +48,7 @@ func researchmove() {
 	fmt.Println(n)
 	n >>= 1
 	fmt.Println(n)
+}
+func lenOfInt(x int)int{
+	return len(x)
 }
